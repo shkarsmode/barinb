@@ -1,7 +1,8 @@
 import { createAction } from '@ngrx/store';
 
-import { payload, Entity} from 'src/store/payload.utils';
-import { ChangedRoom, NewRoom, RoomEntity } from '@app/rooms/common';
+import { payload} from 'src/store/payload.utils';
+import { Entity } from 'src/interfaces/entity.interface';
+import { ChangedRoom, NewRoom, RoomEntity } from 'src/interfaces/room.interface';
 
 export const loadRooms = createAction('[Room] Load Rooms');
 

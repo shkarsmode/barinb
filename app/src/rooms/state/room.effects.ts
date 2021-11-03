@@ -4,7 +4,7 @@ import { Action, select, Store } from '@ngrx/store';
 import { map, withLatestFrom } from 'rxjs/operators';
 
 import { EnvironmentService } from '@app/core/environments';
-import { fetch } from '@app/core/store/utils';
+import { fetch } from 'src/interfaces/data-persistence';
 import { createRoomFromNewRoom } from '@app/rooms/common';
 import { RoomStorage } from 'src/storage/room.storage';
 

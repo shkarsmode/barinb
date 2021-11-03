@@ -4,9 +4,8 @@ import { Action, select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { Entity } from '@app/core/common';
-import { ChangedRoom, NewRoom, Room } from '@app/rooms/common';
-
+import { Entity } from 'src/interfaces/entity.interface';
+import { ChangedRoom, NewRoom, Room} from 'src/interfaces/room.interface';
 import * as RoomActions from './room.actions';
 import { RoomState } from './room.reducer';
 import * as RoomSelectors from './room.selectors';
