@@ -1,4 +1,4 @@
-import { Entity } from '@app/core/common';
+import { Entity } from "./entity.interface";
 
 export interface PersonDto {
   readonly id: number;
