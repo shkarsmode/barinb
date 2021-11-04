@@ -1,11 +1,12 @@
 {
   "dependencies": {
-    "@angular/cli": "^12.2.12",
+    "@angular/cli": "^12.2.13",
     "@ngrx/effects": "^12.5.1",
     "@ngrx/entity": "^12.5.1",
     "@ngrx/router-store": "^12.5.1",
     "@ngrx/store": "^12.5.1",
-    "@ngrx/store-devtools": "^12.5.1"
+    "@ngrx/store-devtools": "^12.5.1",
+    "angular-router": "^0.0.2"
   },
   "devDependencies": {
     "@ngrx/schematics": "^12.5.1"

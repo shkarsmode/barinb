@@ -4,8 +4,9 @@
  * @see https://nx.dev/latest/angular/guides/misc-data-persistence
  * @see https://github.com/nrwl/nx/blob/c0ce1ce65e76786a7dbf04583b80a2528923148f/packages/angular/src/runtime/nx/data-persistence.ts
  */
+
+//  import { RouterStateSnapshot } from '@angular/router';
  import { Injectable, Type } from '@angular/core';
- import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
  import { Actions, ofType } from '@ngrx/effects';
  import { ROUTER_NAVIGATION, RouterNavigationAction } from '@ngrx/router-store';
  import { Action, ActionCreator, Store } from '@ngrx/store';
@@ -40,8 +41,8 @@
 	* See {@link DataPersistence.navigation} for more information.
 	*/
  export interface HandleNavigationOpts<T> {
-	 run(a: ActivatedRouteSnapshot, state?: T): Observable<Action> | Action | void;
-	 onError?(a: ActivatedRouteSnapshot, e: any): Observable<any> | any;
+	 run(a: any, state?: T): Observable<Action> | Action | void;
+	 onError?(a: any, e: any): Observable<any> | any;
  }
  
  export type ActionOrActionWithState<T, A> = A | [A, T];
@@ -87,7 +88,7 @@
 					 return;
 				 }
  
-				 return [findSnapshot(component, action.payload.routerState.root), state] as [ActivatedRouteSnapshot, T];
+				 return [findSnapshot(component, action.payload.routerState.root), state] as [any, T];
 			 }),
 			 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 			 // @ts-ignore
@@ -98,7 +99,7 @@
 	 };
  }
  
- function isStateSnapshot(action: any): action is RouterNavigationAction<RouterStateSnapshot> {
+ function isStateSnapshot(action: any): action is RouterNavigationAction<any> {
 	 return action.type === ROUTER_NAVIGATION;
  }
  
@@ -359,7 +360,7 @@
 	 }
  }
  
- function findSnapshot(component: Type<any>, s: ActivatedRouteSnapshot): ActivatedRouteSnapshot | null {
+ function findSnapshot(component: Type<any>, s: any): any | null {
 	 if (s.routeConfig && s.routeConfig.component === component) {
 		 return s;
 	 }
